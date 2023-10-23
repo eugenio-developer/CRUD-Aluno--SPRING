@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Computadores</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <td>Id</td>
+          <td>Modelo</td>
+          <td>Preço</td>
+          <td>Quantidade</td>
+          <td colspan="2">Ações</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="computador : ${computadores}">
+          <td><span th:text="${computador.id}"></span></td>
+          <td><span th:text="${computador.modelo}"></span></td>
+          <td><span th:text="${computador.preco}"></span></td>
+          <td><span th:text="${computador.quantidade}"></span></td>
+          <td><a th:href="@{/computadores/excluir/{id} (id=${computador.id})}">Excluir</a></td>
+          <td><a th:href="@{/computadores/editar/{id} (id=${computador.id})}">Editar</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
